@@ -5,5 +5,7 @@ I made this during the 2020 lockdown as practice for learning the basics of Reac
 Based on https://www.udemy.com/course/react-2nd-edition
 
 ## To run server locally
+*Requires node v16* (working version v16.9.0)
+
 To compile stuff using webpack and run the server locally on `https://localhost:8080`:  
 `yarn run dev-server`
