@@ -65,6 +65,11 @@ class FriendsGame extends React.Component {
 		this.setState((prevState) => ({cardsLeft: prevState.cardsLeft.filter((cardToRemove) => cardToFind !== cardToRemove)}));
 	}
 
+	reset() {
+		console.log("new game");
+		location.replace(location.href);
+	}
+
 	componentDidMount() {
 		this.shuffleDeck(this.state.cards);
 		setTimeout(() => {
@@ -94,7 +99,7 @@ class FriendsGame extends React.Component {
 								<h1>{this.state.points === 10 ? 'You Win!' : 'Game Over!'} Score: {this.state.points}</h1>
 								<img width={30} src={this.state.points === 10 ? './img/smiley-happy.png' : './img/smiley-dead.png'}/>
 								<p>{message}</p>
-								<a href="/" className="button">Play Again</a>
+								<a onClick={() => {this.reset()}} className="button">Play Again</a>
 							</div>
 						</div> :
 						this.state.timerVisible ?
