@@ -1,0 +1,222 @@
+@font-face {
+    font-family: 'Windows 95';
+    src: url('../fonts/w-95-sans-serif.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Windows 95", sans-serif;
+    font-size: 0.6em;
+    letter-spacing: 0.3px;
+    background-color: #008081;
+    color: #0A0A0A;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    display: block;
+}
+
+p {
+    line-height: 2;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1080px;
+    margin: auto;
+    padding: 1em;
+}
+
+.card {
+    background-color: transparent;
+    width: 180px;
+    height: 250px;
+    perspective: 800px;
+    display: inline-block;
+    margin: 15px;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.cards-container {
+    margin: 2em auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.card.correct .flip-card-back {
+    border-color: #00FF81;
+}
+
+.card.incorrect .card-inner,
+.card.visible .card-inner {
+    transform: rotateY(180deg);
+    pointer-events: none;
+}
+
+.flip-card-front {
+    background-image: url('/img/card-back.jpg');
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: background-color 0.5s;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.flip-card-back {
+    background: #0A0A0A;
+    border: 10px solid white;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back p {
+    background: #0A0A0A;
+    position: absolute;
+    padding: 10px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+}
+
+.instructions-box {
+    display: flex;
+    height: 180px;
+    align-items: center;
+    padding: 20px 50px;
+    justify-content: space-between;
+}
+
+.instructions-box img {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #0A0A0A;
+    object-fit: cover;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+button, a.button {
+    position: relative;
+    transition: all 0.2s ease;
+    letter-spacing: 0.025em;
+    border-radius: 0.125rem;
+    padding: .6rem 2rem;
+    background-color: #cccccc;
+    border: 1px solid #0A0A0A;
+    margin: 1em 0;
+    text-decoration: none;
+    display: inline-block;
+    color: #0A0A0A;
+}
+
+button:before, a.button:before {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    display: block;
+    background: transparent;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #858585;
+    border-bottom: 2px solid #858585;
+}
+
+button:hover, a.button:hover {
+    background: #C0C0C0;
+    cursor: pointer;
+}
+
+.windows-panel {
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #393939;
+    border-bottom: 2px solid #393939;
+    border-radius: 0;
+    background: #cccccc;
+    max-width: 600px;
+    margin: auto;
+}
+
+.windows-panel .header {
+    background: #000181;
+    color: white;
+    position: relative;
+    padding: 4px;
+    border-radius: 0;
+    border: 2px solid #BDBDBD;
+    text-align: left;
+}
+
+.windows-panel .body {
+    padding: 30px;
+}
+
+.windows-panel p {
+    margin: 20px 0;
+}
+
+.dark {
+    background: black;
+    color: white;
+    padding: 5px;
+}
+
+@media all and (max-width: 440px) {
+    .mobile-hide {
+        display: none;
+    }
+}
