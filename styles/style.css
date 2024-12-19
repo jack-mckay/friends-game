@@ -79,7 +79,7 @@ p {
 }
 
 .flip-card-front {
-    background-image: url('/img/card-back.jpg');
+    background-image: url('../img/card-back.jpg');
 }
 
 .flip-card-front, .flip-card-back {
